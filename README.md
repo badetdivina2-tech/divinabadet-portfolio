@@ -1,21 +1,29 @@
-# Divina Portfolio
+# Bernadette A. Divina — Portfolio
 
-A personal portfolio website for **Bernadette A. Divina**, a fourth-year BSIT student from Dugong, Bucay, Abra.
+A personal portfolio website built with Laravel 13 and Blade.
 
-The site is built with Laravel and Blade and lives in the [`my-portfolio`](my-portfolio) folder.
+## About
 
-## Highlights
+Bernadette A. Divina is a fourth-year BS Information Technology student at Data Center College of the Philippines. This site collects her background, featured project, certificate, and contact details in one place.
 
-- About, education, project, certificate, and contact sections
-- Featured project: **Sarak**, a civic map of Bangued, Abra
-- DICT Certificate of Participation viewer
-- Image lightbox, scroll reveals, and a responsive mobile menu
-- Custom editorial design using Fraunces and Manrope
+## Sections
 
-## Run locally
+- **About** — short bio, quick facts, and educational background
+- **Projects** — featured project *Sarak*, a civic map infrastructure for Bangued, Abra
+- **Certificate** — DICT Certificate of Participation for the Philippine Startup Challenge XI webinar series
+- **Contact** — email, phone, and location
+
+## Tech stack
+
+- Laravel 13 / PHP 8.3+
+- Blade templates
+- Hand-written CSS and vanilla JavaScript (no build step required for the portfolio page)
+- Google Fonts: Fraunces and Manrope
+- Leaflet / OpenStreetMap screenshots from the Sarak project
+
+## Setup
 
 ```sh
-cd my-portfolio
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -24,9 +32,22 @@ php artisan migrate
 php artisan serve
 ```
 
-Open <http://127.0.0.1:8000>.
+Visit <http://127.0.0.1:8000>.
 
-## Add more content
+## Project structure
 
-Portfolio content lives in `my-portfolio/resources/views/portfolio.blade.php`.
-Images are stored in `my-portfolio/public/images/`.
+```text
+app/Http/Controllers/Controller.php
+resources/views/portfolio.blade.php   # the portfolio page
+public/images/                        # portrait, certificate, and project screenshots
+routes/web.php                        # routes "/" to the portfolio view
+```
+
+## Editing content
+
+All page content is in `resources/views/portfolio.blade.php`. To add a new project or certificate, copy the relevant card markup and add images to `public/images/`. The lightbox gallery is configured in the `slides` array near the bottom of the same file.
+
+## Author
+
+Bernadette A. Divina
+BSIT Student
